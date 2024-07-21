@@ -201,12 +201,10 @@ justify-content: space-between;
     height: 100%;
     background: transparent;
     transition: 3s;
-
-
 }
 
 .main-imgHover:hover{
     background: #081b29;
-    opacity: 0.8;
+    opacity: .8;
 }
 
