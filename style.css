@@ -30,11 +30,25 @@ body{
 }
 
 .logo{
+    position: relative;
     font-size: 25px;
     text-decoration: none;
     color: #ededed;
     font-weight: 700;
 }
+
+.logo::before{
+    content: '';
+    position: absolute;
+    top:0;
+    right:0;
+    width: 100%;
+    height: 100%;
+    background:#081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
+}
+
 .navbar a{
     /* display: flex;
      justify-content:space-evenly */
@@ -64,31 +78,108 @@ body{
 
 .main-content{
     max-width: 600px;
+    /* display: inline-block; */
 }
 
 .main-content h1{
+    position: relative;
     font-weight: 600;
     font-size: 50px;
     line-height: 1.2;
-}
-.main-content h3{
-    font-weight: 600;
-    font-size: 32px;
-    color: #00abf0; 
     font-family:"Ubuntu", sans-serif,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.main-content h1::before{
+    content: '';
+    position: absolute;
+    top:0;
+    right:0;
+    width: 100%;
+    height: 100%;
+    background:#081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.main-content h3{
+    position: relative;
+    letter-spacing: 1px;
+    font-size: 2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #00abf0; 
+    font-family:"Ubuntu", sans-serif,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* border-right: 5px solid; */
+    /* width: 100%; */
+    /* animation: 
+                typing 2s steps(19) infinite alternate,
+                cursor .4s step-end infinite alternate; */
+
+}
+
+.main-content h3::before{
+    content: '';
+    position: absolute;
+    top:0;
+    right:0;
+    width: 100%;
+    height: 100%;
+    background:#081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.35s;
+}
+
+ /* cursor blinking */
+ /* @keyframes cursor {
+    50% { border-color:transparent; }
+} */
+
+/* typing effect */
+/* @keyframes typing {
+    0%{width: 0;}
+    50%{width: 100%;}
+    100%{width: 0%;}
+} */
+
 .main-content p{
+    position: relative;
     font-size: 20px;
     margin: 20px 0 40px;
     font-family: "Roboto", sans-serif;
+    /* white-space: wrap; */
+}
+
+.main-content p::before{
+    content: '';
+    position: absolute;
+    top:0;
+    right:0;
+    width: 100%;
+    height: 100%;
+    background:#081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.7s;
 }
 
 .main-content .btn-box{
+    position: relative;
     display: flex;
     justify-content: space-between;
     width: 345px;
     height:50px ;
+}
+
+.main-content .btn-box::before{
+    content: '';
+    position: absolute;
+    top:0;
+    right:0;
+    width: 100%;
+    height: 100%;
+    background:#081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.9s;
+    z-index: 2;
 }
 
 .btn-box a {
@@ -110,6 +201,7 @@ body{
     overflow: hidden;
     transition: .5s;
 }
+
 .btn-box a:hover{
     color: #00abf0;
 }
@@ -151,6 +243,19 @@ width: 170px;
 /* background: red; */
 display: flex;
 justify-content: space-between;
+}
+
+.main-icons:before{
+    content: '';
+    position: absolute;
+    top:0;
+    right:0;
+    width: 100%;
+    height: 100%;
+    background:#081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 2.3s;
+    z-index: 2;
 }
 
 .main-icons a{
@@ -201,6 +306,9 @@ justify-content: space-between;
     height: 100%;
     background: transparent;
     transition: 3s;
+    animation: activeHover .1s forwards;
+    animation-delay: 4s;
+    pointer-events: none;
 }
 
 .main-imgHover:hover{
@@ -208,3 +316,23 @@ justify-content: space-between;
     opacity: .8;
 }
 
+.main-imgHover::after{
+    content: '';
+    position: absolute;
+    top:0;
+    right:0;
+    width: 120%;
+    height: 100%;
+    background:#081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 3s;
+    z-index: 100;
+}
+
+@keyframes showRight{
+    100%{width: 0;;}
+}
+
+@keyframes activeHover {
+    100%{pointer-events: auto;}
+}
